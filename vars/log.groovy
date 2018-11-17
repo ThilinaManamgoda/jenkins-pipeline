@@ -1,7 +1,7 @@
 def info(message) {
 
     wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-        echo "\\u001b[31mINFO: ${message}"
+        sh "\\u001b[31mINFO: ${message}"
     }
 
 }
