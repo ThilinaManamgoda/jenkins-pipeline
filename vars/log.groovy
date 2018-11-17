@@ -1,5 +1,8 @@
 def info(message) {
-    echo "INFO: ${message}"
+    ansiColor('xterm') {
+        echo "INFO: ${message}"
+    }
+
 }
 
 def warning(message) {
