@@ -7,5 +7,6 @@ class Utilities implements Serializable {
         steps.ansiColor('xterm') {
             steps.echo "Hello \\u001B[31mRed\\u001B[m"
         }
+        steps.echo "Hello \\u001B[31mRed\\u001B[m"
     }
 }
