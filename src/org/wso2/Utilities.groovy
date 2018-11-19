@@ -6,6 +6,9 @@ class Utilities implements Serializable {
     def color() {
         steps.ansiColor('xterm') {
             steps.echo "Hello1 \\u001B[31mRed\\u001B[m"
+            steps.withCredentials([usernamePassword(credentialsId: 'creds', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                steps.sh " echo $USER"
+            }
         }
 
     }
