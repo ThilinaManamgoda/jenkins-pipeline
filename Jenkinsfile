@@ -8,7 +8,7 @@ node {
         utils.color()
         echo "Hello \u001B[31mRed\u001B[m"
         withCredentials([usernamePassword(credentialsId: 'creds', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-           echo "$USER"
+           sh " echo $USER"
         }
     }
 
