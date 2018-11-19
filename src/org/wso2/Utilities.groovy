@@ -4,6 +4,6 @@ class Utilities implements Serializable {
     def steps
     Utilities(steps) {this.steps = steps}
     def color(){
-        echo "\\u001B[31mI\'m Red\\u001B[0m Now not"
+        steps.echo "\\u001B[31mI\'m Red\\u001B[0m Now not"
     }
 }
