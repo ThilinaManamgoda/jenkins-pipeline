@@ -7,12 +7,14 @@ class Utilities implements Serializable {
     this.envs=steps.env
     }
     def color() {
-        steps.ansiColor('xterm') {
-            steps.echo "Hello1 \\u001B[31mRed\\u001B[m"
+
+            steps.wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
+                steps.echo "Hello1 \\u001B[31mRed\\u001B[m"
+            }
             steps.withCredentials([steps.usernamePassword(credentialsId: 'creds', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                 steps.sh " echo ${envs.USER}"
             }
-        }
+
 
     }
 }
