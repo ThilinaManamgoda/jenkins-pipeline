@@ -5,7 +5,7 @@ class Utilities implements Serializable {
     Utilities(steps) {this.steps = steps}
     def color() {
         steps.ansiColor('xterm') {
-            steps.echo "\\u001B[31mI\'m Red\\u001B[0m Now not"
+            steps.echo "Hello \\u001B[31mRed\\u001B[m"
         }
     }
 }
