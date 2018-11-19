@@ -1,6 +1,7 @@
 package org.wso2
 
 class Utilities implements Serializable {
+    def USER
     def steps
     Utilities(steps) {this.steps = steps}
     def color() {
