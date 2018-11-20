@@ -1,7 +1,5 @@
-@Library("lib")
-import org.wso2.Utilities
+@Library("lib")_
 
-def utils = new Utilities(this)
 
 //Nodes
 def NODE_MASTER = "master"
