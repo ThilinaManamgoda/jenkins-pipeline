@@ -18,15 +18,20 @@ class Utilities implements Serializable {
         return "1234"
 
     }
-    boolean createdirs(dirArray) {
+    boolean createdirs(String []dirArray) {
+
+        if (dirArray.length == 0 ) {
+            return false
+        }
+
         String dirList = ""
         dirArray.each {
             dirList.concat("${it} ")
         }
        int status = steps.sh (
-                    script: '''
+                    script: """
                             mkdir -p ${dirList}
-                            ''',
+                            """,
                     returnStatus: true
                 )
         if (status == 0) {
