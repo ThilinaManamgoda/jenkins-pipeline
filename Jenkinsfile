@@ -3,7 +3,15 @@ def utils = new Utilities(this)
 node {
 
     stage("utiu"){
+
+    try{
        out = sh returnStatus: true, script: './ss.sh'
+       } catch (ee) {
+
+        throw ee
+       }
+
+
        echo "$out"
         utils.color()
     }
