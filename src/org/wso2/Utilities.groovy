@@ -21,7 +21,7 @@ class Utilities implements Serializable {
     boolean createdirs(dirArray) {
 
 
-        String dirList = ""
+        def dirList = ""
         dirArray.each {
             dirList.concat("${it} ")
         }
