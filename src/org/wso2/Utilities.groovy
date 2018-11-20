@@ -21,7 +21,7 @@ class Utilities implements Serializable {
     boolean createdirs(dirArray) {
 
         dirArray.each {
-            steps.sh "${it}"
+            steps.sh "echo ${it}"
             int status = steps.sh (
                     script: '''
                             mkdir -p ${it}
