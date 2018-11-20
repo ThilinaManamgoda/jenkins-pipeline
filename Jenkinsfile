@@ -8,6 +8,10 @@ def NODE_MASTER = "master"
 //Stages
 def STAGE_SETUP_ENV = "Setup Environment"
 def STAGE_BUILD_PACK = "Build the pack"
+def STAGE_BUILD_IMAGE = "Build the immutable image"
+def STAGE_DEPLOY_STAGING = "Deploy to Staging"
+def STAGE_RUNNING_TESTS = "Running Tests"
+def STAGE_DEPLOY_PRODUCTION = "Deploy to Production"
 
 node(NODE_MASTER) {
 
@@ -24,27 +28,23 @@ node(NODE_MASTER) {
 
     }
 
-
-    stage("utiu") {
-
-        try {
-            sh './ss.sh'
-        } catch (ee) {
-            throw ee
-        }
-
-
-        echo "$out"
-        utils.color()
-    }
-    ansiColor('xterm') {
-        stage("\u001B[31mI'm Red\u001B[m Now not") {
-            echo "Hello \u001B[31mRed\u001B[m"
-
-        }
-
+    stage(STAGE_BUILD_IMAGE){
 
     }
 
+    stage(STAGE_DEPLOY_STAGING){
 
+    }
+
+    stage(STAGE_RUNNING_TESTS){
+
+    }
+
+    stage(STAGE_DEPLOY_PRODUCTION){
+
+    }
+
+    stage(STAGE_RUNNING_TESTS){
+
+    }
 }
