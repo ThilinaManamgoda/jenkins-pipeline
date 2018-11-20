@@ -8,7 +8,7 @@ class Utilities implements Serializable {
     }
     def color() {
 
-            steps.wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
+            steps.wrap([$class: 'AnsiColorBuildWrapper1', 'colorMapName': 'XTerm']) {
                 steps.echo "Hello1 \\u001B[31mRed\\u001B[m"
             }
             steps.withCredentials([steps.usernamePassword(credentialsId: 'creds', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
