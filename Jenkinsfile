@@ -5,10 +5,10 @@ node {
     stage("utiu"){
 
     try{
-       out = sh returnStatus: true, script: './ss.sh'
+       sh './ss.sh'
        } catch (ee) {
 
-        throw ee
+        throw
        }
 
 
