@@ -1,5 +1,5 @@
 package org.wso2
-import groovy.io.FileType
+
 class Utilities implements Serializable {
     def steps
     def envs
@@ -22,7 +22,8 @@ class Utilities implements Serializable {
 
         dirArray.each {
 
-            new File("dir$it").mkdir()
+            boolean  st = new File("$it").mkdir()
+            println(st)
 //            steps.sh "echo ${it}"
 //            int status = steps.sh (
 //                    script: '''
