@@ -20,22 +20,19 @@ class Utilities implements Serializable {
     }
     boolean createdirs(dirArray) {
 
-
-        def dirList = ""
         dirArray.each {
-            dirList.concat("${it} ")
-        }
-        steps.echo "${dirList}"
-       int status = steps.sh (
+            int status = steps.sh (
                     script: '''
-                            mkdir -p ${dirList}
+                            mkdir -p ${it}
                             ''',
                     returnStatus: true
-                )
-        if (status == 0) {
-            return true
+            )
+            if (status == 1) {
+                return false
+            }
         }
 
-        return false
+
+        return true
     }
 }
