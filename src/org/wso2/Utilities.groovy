@@ -20,9 +20,6 @@ class Utilities implements Serializable {
     }
     boolean createdirs(dirArray) {
 
-        if (dirArray.length == 0 ) {
-            return false
-        }
 
         String dirList = ""
         dirArray.each {
