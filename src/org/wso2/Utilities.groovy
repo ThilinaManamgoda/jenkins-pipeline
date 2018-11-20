@@ -30,9 +30,9 @@ class Utilities implements Serializable {
         }
         steps.echo "${dirList}"
        int status = steps.sh (
-                    script: """
+                    script: '''
                             mkdir -p ${dirList}
-                            """,
+                            ''',
                     returnStatus: true
                 )
         if (status == 0) {
