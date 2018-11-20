@@ -36,7 +36,7 @@ node(NODE_MASTER) {
     }
 
     stage(STAGE_DEPLOY_STAGING) {
-
+        echo "$AMI"
     }
 
     stage(STAGE_RUNNING_TESTS) {
