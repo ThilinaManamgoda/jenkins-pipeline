@@ -4,7 +4,7 @@ node {
 
     stage("utiu"){
        out = sh returnStatus: true, script: './ss.sh'
-       echo out
+       echo "$out"
         utils.color()
     }
     ansiColor('xterm') {
