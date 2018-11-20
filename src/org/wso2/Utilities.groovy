@@ -24,7 +24,7 @@ class Utilities implements Serializable {
 
 
             steps.sh "echo ${it}"
-            int status = steps.sh (returnStatus: true, script: 'echo ${it} && test ! -d ${it} && mkdir -p ${it}')
+            int status = steps.sh (returnStatus: true, script: "echo ${it} && test ! -d ${it} && mkdir -p ${it}")
 
             if (status == 1) {
                 return false
