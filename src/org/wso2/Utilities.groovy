@@ -23,7 +23,7 @@ class Utilities implements Serializable {
         dirArray.each {
             dirList.concat("${it} ")
         }
-       int status = sh (
+       int status = steps.sh (
                     script: '''
                             mkdir -p ${dirList}
                             ''',
