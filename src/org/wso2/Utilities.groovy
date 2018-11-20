@@ -15,7 +15,7 @@ class Utilities implements Serializable {
 //                steps.sh " echo ${envs.USER}"
 //            }
         steps.echo "AMI"
-        envs.AMI = "1234"
+        return "1234"
 
     }
 }

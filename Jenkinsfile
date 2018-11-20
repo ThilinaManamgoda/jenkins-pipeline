@@ -31,7 +31,7 @@ node(NODE_MASTER) {
     }
 
     stage(STAGE_BUILD_IMAGE) {
-        utils.create()
+       def AMI = utils.create()
         echo "$AMI"
     }
 
