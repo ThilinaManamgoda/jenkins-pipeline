@@ -18,4 +18,9 @@ class Utilities implements Serializable {
         return "1234"
 
     }
+    boolean createdirs(dirArray) {
+        dirArray.each {
+            steps.sh "mkdir -p ${it}"
+        }
+    }
 }
