@@ -22,7 +22,7 @@ node(NODE_MASTER) {
 
     //This stage is responsible for cloning required resources from GitHub
     stage(STAGE_SETUP_ENV) {
-        utils.createdirs(["config","cfs"])
+        utils.createdirs(["config1","cfs1"])
         sh "ls -l"
         log.info "ss"
     }
