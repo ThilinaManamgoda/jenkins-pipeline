@@ -22,18 +22,17 @@ class Utilities implements Serializable {
 
         dirArray.each {
 
-            boolean  st = new File("$it").mkdir()
-            println(st)
-//            steps.sh "echo ${it}"
-//            int status = steps.sh (
-//                    script: '''
-//                            test ! -d ${it} && mkdir -p ${it}
-//                            ''',
-//                    returnStatus: true
-//            )
-//            if (status == 1) {
-//                return false
-//            }
+
+            steps.sh "echo ${it}"
+            int status = steps.sh (
+                    script: '''
+                            test ! -d ${it} && mkdir -p ${it}
+                            ''',
+                    returnStatus: true
+            )
+            if (status == 1) {
+                return false
+            }
         }
 
 
