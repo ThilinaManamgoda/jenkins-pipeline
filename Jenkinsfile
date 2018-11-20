@@ -16,7 +16,7 @@ node(NODE_MASTER) {
 
     //This stage is responsible for cloning required resources from GitHub
     stage(STAGE_SETUP_ENV) {
-        info "ss"
+        log.info "ss"
     }
 
     /*
