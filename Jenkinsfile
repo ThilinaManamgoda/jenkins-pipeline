@@ -1,4 +1,7 @@
-@Library("lib") _
+@Library("lib")
+
+import org.wso2.Utilities
+def utils = new Utilities(this)
 
 
 //Nodes
@@ -11,8 +14,9 @@ def STAGE_DEPLOY_STAGING = "Deploy to Staging"
 def STAGE_RUNNING_TESTS = "Running Tests"
 def STAGE_DEPLOY_PRODUCTION = "Deploy to Production"
 
-node(NODE_MASTER) {
+env.BUILD_PACK_LOC = "/home/jenkins"
 
+node(NODE_MASTER) {
 
     //This stage is responsible for cloning required resources from GitHub
     stage(STAGE_SETUP_ENV) {
@@ -22,27 +26,28 @@ node(NODE_MASTER) {
     /*
     This stage is responsible for getting updates and applying the configuration
      */
-    stage(STAGE_BUILD_PACK){
+    stage(STAGE_BUILD_PACK) {
 
     }
 
-    stage(STAGE_BUILD_IMAGE){
+    stage(STAGE_BUILD_IMAGE) {
+        utils.create()
+        echo "$AMI"
+    }
+
+    stage(STAGE_DEPLOY_STAGING) {
 
     }
 
-    stage(STAGE_DEPLOY_STAGING){
+    stage(STAGE_RUNNING_TESTS) {
 
     }
 
-    stage(STAGE_RUNNING_TESTS){
+    stage(STAGE_DEPLOY_PRODUCTION) {
 
     }
 
-    stage(STAGE_DEPLOY_PRODUCTION){
-
-    }
-
-    stage(STAGE_RUNNING_TESTS){
+    stage(STAGE_RUNNING_TESTS) {
 
     }
 }
