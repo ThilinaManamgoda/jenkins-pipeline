@@ -3,7 +3,7 @@ def utils = new Utilities(this)
 node {
 
     stage("utiu"){
-
+        sh './ss.sh'
         utils.color()
     }
     ansiColor('xterm') {
