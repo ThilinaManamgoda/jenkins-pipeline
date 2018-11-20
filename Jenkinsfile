@@ -15,7 +15,7 @@ def STAGE_RUNNING_TESTS = "Running Tests"
 def STAGE_DEPLOY_PRODUCTION = "Deploy to Production"
 
 env.BUILD_PACK_LOC = "/home/jenkins"
-
+def AMI
 node(NODE_MASTER) {
 
     //This stage is responsible for cloning required resources from GitHub
@@ -31,7 +31,7 @@ node(NODE_MASTER) {
     }
 
     stage(STAGE_BUILD_IMAGE) {
-       def AMI = utils.create()
+        AMI = utils.create()
         echo "$AMI"
     }
 
