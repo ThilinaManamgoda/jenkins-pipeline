@@ -1,7 +1,7 @@
 @Library("lib")
 
-import org.wso2.Utilities
-def utils = new Utilities(this)
+//import org.wso2.Utilities
+//def utils = new Utilities(this)
 
 
 //Nodes
@@ -22,7 +22,7 @@ node(NODE_MASTER) {
 
     //This stage is responsible for cloning required resources from GitHub
     stage(STAGE_SETUP_ENV) {
-        utils.createdirs(["config1","cfs1"])
+        utils.cloneRepo("configs", "https://github.com/ThilinaManamgoda/wso2-ci-cd.git")
         sh "ls -l"
         log.info "ss"
     }

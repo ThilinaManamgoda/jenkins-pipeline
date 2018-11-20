@@ -18,20 +18,5 @@ class Utilities implements Serializable {
         return "1234"
 
     }
-    boolean createdirs(dirArray) {
 
-        dirArray.each {
-
-
-            steps.sh "echo ${it}"
-            int status = steps.sh (returnStatus: true, script: "echo ${it} && test ! -d ${it} && mkdir -p ${it}")
-
-            if (status == 1) {
-                return false
-            }
-        }
-
-
-        return true
-    }
 }
