@@ -18,7 +18,7 @@ class Utilities implements Serializable {
         return "1234"
 
     }
-    boolean createdirs(String []dirArray) {
+    boolean createdirs(dirArray) {
 
         if (dirArray.length == 0 ) {
             return false
